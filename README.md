@@ -24,7 +24,7 @@
 ![워드 클라우드](./info/wordcloud.png)
 
 #### 4-1-2. 콘텐츠 분류
-![카드 소팅](./info/card_sorting.pdf)
+![카드 소팅](./info/card_sorting.png)
 
 
 #### 4-1-3. 서비스 흐름 설계
