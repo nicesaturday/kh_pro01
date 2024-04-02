@@ -21,15 +21,15 @@
 <br>
 
 #### 4-1-1. 자료 수집
-|[워드 클라우드](./info/wordcloud.png)
+![워드 클라우드](./info/wordcloud.png)
 
 #### 4-1-2. 콘텐츠 분류
-|[카드 소팅](./info/card_sorting.pdf)
+![카드 소팅](./info/card_sorting.pdf)
 
 
 #### 4-1-3. 서비스 흐름 설계
 
-|[유저 흐름 설계](./info/erd/usecase.drawio.png)
+![유저 흐름 설계](./info/erd/usecase.drawio.png)
 
 #### 4-1-4 서비스 시나리오
 
@@ -37,12 +37,13 @@
 
 #### 4-2-1 개념적 설계
 
-|[개념적 설계](./info/erd/info_erd.drawio.png)
+
+![개념적 설계](./info/erd/info_erd.drawio.png)
 
 #### 4-2-2 논리적 설계
 
-|[논리적 설계](./info/erd/logical_erd.drawio.png)
+![논리적 설계](./info/erd/logical_erd.drawio.png)
 
 #### 4-2-1 물리적 설계
 
-|[물리적 설계](./info/erd/physical_erd.png)
+![물리적 설계](./info/erd/physical_erd.png)
