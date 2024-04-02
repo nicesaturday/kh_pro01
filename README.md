@@ -53,7 +53,7 @@
 
 #### 4-1-3. 서비스 흐름 설계
 
-![유저 흐름 설계](./info/erd/usecase.drawio.png)
+![유저 흐름 설계](./info/erd/usercase.png)
 
 #### 4-1-4 서비스 시나리오
 
