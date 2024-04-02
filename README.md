@@ -87,4 +87,4 @@
 
 #### 4-2-1 물리적 설계
 
-![물리적 설계](./info/erd/physical_erd.png)
+![물리적 설계](./info/erd/physical_erd.drawio.png)
