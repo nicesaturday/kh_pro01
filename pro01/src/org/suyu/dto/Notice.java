@@ -44,6 +44,11 @@ public class Notice {
 	public void setVisited(int visited) {
 		this.visited = visited;
 	}
+	@Override
+	public String toString() {
+		return "Notice [id=" + id + ", title=" + title + ", content=" + content + ", resdate=" + resdate + ", visited="
+				+ visited + "]";
+	}
 	
 	
 }

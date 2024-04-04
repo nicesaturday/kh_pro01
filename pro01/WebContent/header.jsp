@@ -21,7 +21,13 @@
           </c:if>
        </ul>
    </nav>
-   <nav>
-       
+   <nav id="gnb">
+      <ul class="main_menu">
+        <li><a href="">커뮤니티</a></li>
+        <ul>
+         <li><a href="${hpath }/notilist.do">공지사항</a></li>
+         <li></li>
+        </ul>
+      </ul>   
    </nav>
 </header>

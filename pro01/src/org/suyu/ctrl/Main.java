@@ -39,6 +39,7 @@ public class Main extends HttpServlet {
 		 ServletContext application = request.getServletContext();
 		 String realPath = request.getSession().getServletContext().getRealPath("/"); //내 컴퓨터의 프로젝트 위치
 		 application.setAttribute("realPath", realPath);
+		 application.setAttribute("title", "수유역 소개");
 		 
 		 List<Users> usersList = new ArrayList<Users>();
 		 List<Qna> qnaList = new ArrayList<Qna>();
