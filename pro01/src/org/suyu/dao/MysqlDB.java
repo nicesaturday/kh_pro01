@@ -13,7 +13,7 @@ public class MysqlDB implements SqlLang {
 	final static String USERID = "root";
 	final static String USERPW = "1234";
 	
-	public Connection Connect() {
+	public Connection connect() {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			try {

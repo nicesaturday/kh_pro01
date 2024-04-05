@@ -1,8 +1,6 @@
-package org.suyu.ctrl;
+package org.suyu.ctrl.notice;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,18 +13,14 @@ import org.suyu.dao.NoticeDao;
 import org.suyu.dto.Notice;
 
 /**
- * Servlet implementation class Notilist
+ * Servlet implementation class NoticeGetOne
  */
-@WebServlet("/notilist.do")
-public class Notilist extends HttpServlet {
+@WebServlet("/notice_one")
+public class NoticeGetOne extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public Notilist() {
+    public NoticeGetOne() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
@@ -37,15 +31,14 @@ public class Notilist extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 		
-		List<Notice> arr = new ArrayList<Notice>();
+		int id = Integer.parseInt(request.getParameter("id"));
 		
 		NoticeDao nd = new NoticeDao();
-		arr = nd.getNoticeList();
+		Notice noticeOne =  nd.getNoticeOne(id);
 		
-		request.setAttribute("arr", arr);
-		RequestDispatcher view = request.getRequestDispatcher("/notice/noticeList.jsp");
+		request.setAttribute("data", noticeOne);
+		RequestDispatcher view = request.getRequestDispatcher("/notice/noticeOne.jsp");
 		view.forward(request, response);
-		
 	}
 
 }

@@ -18,7 +18,7 @@ public class NoticeDao {
 	
 	public List<Notice> getNoticeList() {
 	    List<Notice> noticeList = new ArrayList<Notice>();
-	    con = db.Connect();
+	    con = db.connect();
 	    try {
 	    pstmt = con.prepareStatement(MysqlDB.SELCT_NOTICE);
 	    rs = pstmt.executeQuery();
@@ -44,7 +44,7 @@ public class NoticeDao {
 		int cnt = 0;
 		List<Notice> noticeList = new ArrayList<Notice>();
 		try {
-			con = db.Connect();
+			con = db.connect();
 			try {
 				pstmt = con.prepareStatement(MysqlDB.INS_NOTICE);
 				pstmt.setString(1,title);
@@ -55,7 +55,56 @@ public class NoticeDao {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			db.close(con, pstmt);
 		}
 		return cnt;
 	}
+	
+	public Notice getNoticeOne(int id) {
+		Notice result = null;
+		try {
+			con = db.connect();
+			try {
+				pstmt = con.prepareStatement(MysqlDB.SELECT_ONE_NOTICE);
+				pstmt.setInt(1, id);
+				rs = pstmt.executeQuery();
+				while(rs.next()) {
+					Notice notice = new Notice(rs.getInt("id"),
+							                   rs.getString("title"),
+							                   rs.getString("content"),
+							                   rs.getString("resdate"),
+							                   rs.getInt("visited"));
+					result = notice;
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			db.close(con, pstmt, rs);
+		}
+		return result;
+	}
+	
+	public int deleteNoticeOne(int id) {
+		int cnt = 0;
+		try {
+			con = db.connect();
+			try {
+				pstmt = con.prepareStatement(MysqlDB.DELETE_ONE_NOTICE);
+				pstmt.setInt(1, id);
+				cnt = pstmt.executeUpdate();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} 
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			db.close(con, pstmt);
+		}
+		return cnt;
+	}
+	
 }

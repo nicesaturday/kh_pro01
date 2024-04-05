@@ -25,7 +25,7 @@
        <c:forEach var="data" items="${arr }">
           <tr>
             <td>${data.id }</td>
-            <td>${data.title }</td>
+            <td><a href="${hpath }/notice_one?id=${data.id }">${data.title }</a></td>
             <td>${data.content }</td>
             <td>${data.resdate }</td>
             <td>${data.visited }</td>            
@@ -33,6 +33,13 @@
        </c:forEach>
     </tbody>
    </table>
-   <button type="button" class="btn btn-info" style="color: #0000;"><a href="${ipath}/notiupload" >글작성</a></button>
+   
+   <c:if test="${not empty error}">
+     <div>
+       <h2>${error }</h2>
+     </div>
+   </c:if>
+   
+   <button type="button" class="btn btn-info" style="color: #0000;"><a href="${ipath}/notice_upload" >글작성</a></button>
 </body>
 </html>
