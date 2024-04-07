@@ -9,7 +9,7 @@
 </head>
 <body>
 
-   <form action="${ipath }/notiupload" method="post" style="margin-top: 150px;">
+   <form action="${ipath }/notice_upload" method="post" style="margin-top: 150px;">
   <div class="form-group container">
     <label for="exampleFormControlInput1" style="text-align: center; width: 100%">Title</label>
     <input type="title" name="title" class="form-control"placeholder="title" max="100" required="required">

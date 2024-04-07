@@ -1,6 +1,8 @@
 create database master;
 use master;
 
+
+
 drop table traffic;
 
 
@@ -26,3 +28,4 @@ desc datas;
 create table manager(id int auto_increment primary key, resdate datetime default current_timestamp, email varchar(100), pw varchar(100), name varchar(50));
 desc manager;
 
+commit;

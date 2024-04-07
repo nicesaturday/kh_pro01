@@ -5,7 +5,7 @@
 <c:set var="hpath" value="<%=request.getContextPath() %>"/> <!-- 최상위 패스(고정패스) -->
 <header>
    <div class="logo_wrap">
-       <a href="/pro01"><img src="${hpath }/img/favicon.png" alt="suyu"/></a>
+       <a href="/pro01"><img src="${hpath }/img/favicon.png" style"width=50px; height="50px"" alt="suyu"/></a>
    </div>
    <nav id="tnb">
        <ul>
@@ -21,13 +21,34 @@
           </c:if>
        </ul>
    </nav>
-   <nav id="gnb">
-      <ul class="main_menu">
-        <li><a href="">커뮤니티</a></li>
-        <ul>
+   <nav id="gnb" style="width: 100%; ">
+      <ul class="main_menu" style="list-style-type: none; display: flex; justify-content: space-around;">
+        <li><a href="">수유 소개</a>
+          <ul>
+            <li>인구수</li>
+            <li>오시는 길</li>
+            <li>역사</li>
+            <li>위치적 장점</li>
+          </ul>
+        </li>
+        <li><a href="">교통 및 상권</a>
+          <ul>
+            <li>교통편</li>
+            <li>주변 맛집</li>
+            <li>주변 상권</li>
+            <li>주요 시설</li>
+          </ul>
+        </li>
+        <li><a href="">행사</a>
+          <ul>
+            <li>크리스마스 행사</li>
+            <li>419 축제</li>
+            <li>빨래골 축제</li>
+            <li>우이천 축제</li>
+            <li>고려대 행진 축제</li>
+          </ul>
+        </li>
          <li><a href="${hpath }/notilist">공지사항</a></li>
-         <li></li>
-        </ul>
       </ul>   
    </nav>
 </header>

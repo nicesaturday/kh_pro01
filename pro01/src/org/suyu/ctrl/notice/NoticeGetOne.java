@@ -32,9 +32,12 @@ public class NoticeGetOne extends HttpServlet {
 		response.setContentType("text/html; charset=UTF-8");
 		
 		int id = Integer.parseInt(request.getParameter("id"));
+		int cnt = 0;
 		
 		NoticeDao nd = new NoticeDao();
-		Notice noticeOne =  nd.getNoticeOne(id);
+		boolean viewBreak = true;
+		Notice noticeOne =  nd.getNoticeOne(id , viewBreak);
+		
 		
 		request.setAttribute("data", noticeOne);
 		RequestDispatcher view = request.getRequestDispatcher("/notice/noticeOne.jsp");

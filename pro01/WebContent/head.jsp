@@ -18,3 +18,40 @@
 <meta property="og:description" content="수유동 , 419 , 우이천 , 수유시장">
 <meta property="og:type" content="website">
 <meta property="og:image" content="${ipath }/img/favicon.png">
+<style>
+  #gnb {
+      	font:bold 16px "malgun gothic";
+		width:700px;
+		height:50px;
+		background: #ccc;
+		color:black;
+		line-height: 50px; 
+		margin:0 auto;
+		text-align: center; 
+  }
+  
+  #gnb > ul > li {
+        float:left;
+		width:140px;
+		position:relative;
+  }
+  
+  #gnb > ul > li > ul {
+		width:130px;
+		display:none;
+		position: absolute;
+		font-size:14px;
+		background: skyblue;
+	}
+  #gnb > ul > li:hover > ul {
+		display:block;
+  }
+  
+  #gnb > ul > li > ul > li:hover {
+		background: orange;
+		transition: ease 1s;
+		}
+		
+
+	
+</style>

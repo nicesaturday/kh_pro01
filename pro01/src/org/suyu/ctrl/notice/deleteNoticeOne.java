@@ -36,14 +36,14 @@ public class deleteNoticeOne extends HttpServlet {
 		String error = null;
 		
 		cnt = nd.deleteNoticeOne(id);
-		
+		System.out.println(cnt + "개가 삭제 됐음");
 		if(cnt <= 0) {
 			error = "삭제에 실패했습니다.";
 			request.setAttribute("error", error);
-			RequestDispatcher view = request.getRequestDispatcher("/pro01/notilist.do");
+			RequestDispatcher view = request.getRequestDispatcher("/pro01/notilist");
 			view.forward(request, response);
 		}
-		if(cnt > 0) response.sendRedirect("/pro01/notilist.do");
+		if(cnt > 0) response.sendRedirect("/pro01/notilist");
 	}
 
 }

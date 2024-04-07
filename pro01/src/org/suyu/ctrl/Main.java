@@ -34,11 +34,9 @@ public class Main extends HttpServlet {
 	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String name = "김민식";
+		
 		
 		 ServletContext application = request.getServletContext();
-		 String realPath = request.getSession().getServletContext().getRealPath("/"); //내 컴퓨터의 프로젝트 위치
-		 application.setAttribute("realPath", realPath);
 		 application.setAttribute("title", "수유역 소개");
 		 
 		 List<Users> usersList = new ArrayList<Users>();
@@ -46,8 +44,6 @@ public class Main extends HttpServlet {
 		 
 		 request.setAttribute("usersList", usersList);
 		 request.setAttribute("qna", qnaList);
-		 request.setAttribute("name", name);
-		 request.setAttribute("sa", "./img/hwaguesa.jpg");
 		 RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/index.jsp");
 		 view.forward(request, response);
 		 

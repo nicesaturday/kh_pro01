@@ -11,9 +11,9 @@
 <body>
 <%@ include file="/header.jsp" %>
   <h2>공지사항</h2>
-   <table>
+   <table class="table table-striped">
     <thead>
-          <tr>
+          <tr class="table-light">
             <th>id</th>
             <th>title</th>
             <th>content</th>
@@ -23,12 +23,12 @@
     </thead>
     <tbody>
        <c:forEach var="data" items="${arr }">
-          <tr>
-            <td>${data.id }</td>
-            <td><a href="${hpath }/notice_one?id=${data.id }">${data.title }</a></td>
-            <td>${data.content }</td>
-            <td>${data.resdate }</td>
-            <td>${data.visited }</td>            
+          <tr class="table-light">
+            <td class="table-light">${data.id }</td>
+            <td class="table-light"><a href="${hpath }/notice_one?id=${data.id }">${data.title }</a></td>
+            <td class="table-light">${data.content }</td>
+            <td class="table-light">${data.resdate }</td>
+            <td class="table-light">${data.visited }</td>            
           </tr>
        </c:forEach>
     </tbody>
@@ -40,6 +40,6 @@
      </div>
    </c:if>
    
-   <button type="button" class="btn btn-info" style="color: #0000;"><a href="${ipath}/notice_upload" >글작성</a></button>
+   <button type="button" class="btn btn-info" style="color: #0000;"><a href="${hpath }/notice_upload" >글작성</a></button> 
 </body>
 </html>

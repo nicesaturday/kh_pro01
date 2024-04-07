@@ -63,13 +63,13 @@ public class NotiUpLoad extends HttpServlet {
 		
 		
 		
-		
+		System.out.println(cnt + "개가 변경 됐음");
 		if(cnt == 0) {
 			error = "실패했습니다.";
 			request.setAttribute("error", error);
-			response.sendRedirect("/pro01/notiupload");
+			response.sendRedirect("/pro01/notice_upload");
 		}
-		if(cnt > 0) response.sendRedirect("/pro01/notilist.do");
+		if(cnt > 0) response.sendRedirect("/pro01/notilist");
 		
 			
 		
