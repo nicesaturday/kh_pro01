@@ -15,10 +15,10 @@
     <thead>
           <tr class="table-light">
             <th>id</th>
-            <th>title</th>
-            <th>content</th>
-            <th>resdate</th>
-            <th>visited</th>
+            <th>제목</th>
+            <th>내용</th>
+            <th>작성 일</th>
+            <th>방문 날짜</th>
           </tr>
     </thead>
     <tbody>

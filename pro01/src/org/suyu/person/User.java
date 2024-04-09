@@ -1,12 +1,12 @@
 package org.suyu.person;
 
-public class Users {
+public class User {
 	private int id;
 	private String email;
 	private String name;
 	private String pw;
 	private String resdate;
-	public Users(int id, String email, String name, String pw, String resdate) {
+	public User(int id, String email, String name, String pw, String resdate) {
 		super();
 		this.id = id;
 		this.email = email;

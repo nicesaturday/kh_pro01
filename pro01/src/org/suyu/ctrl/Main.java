@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.suyu.dto.Qna;
-import org.suyu.person.Users;
+import org.suyu.person.User;
 
 /**
  * Servlet implementation class Main
@@ -39,7 +39,7 @@ public class Main extends HttpServlet {
 		 ServletContext application = request.getServletContext();
 		 application.setAttribute("title", "수유역 소개");
 		 
-		 List<Users> usersList = new ArrayList<Users>();
+		 List<User> usersList = new ArrayList<User>();
 		 List<Qna> qnaList = new ArrayList<Qna>();
 		 
 		 request.setAttribute("usersList", usersList);

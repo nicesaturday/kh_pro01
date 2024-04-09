@@ -1,7 +1,7 @@
 package org.suyu.dto;
 
 import org.suyu.person.Manager;
-import org.suyu.person.Users;
+import org.suyu.person.User;
 
 public class Qna {
 	private int id;
@@ -10,9 +10,9 @@ public class Qna {
 	private String content;
 	private int visited;
 	private String resDate;
-	private Users user;
+	private User user;
 	private Manager manager;
-	public Qna(int id, int pLevel, String title, String content, int visited, String resDate, Users user,
+	public Qna(int id, int pLevel, String title, String content, int visited, String resDate, User user,
 			Manager manager) {
 		super();
 		this.id = id;
@@ -60,10 +60,10 @@ public class Qna {
 	public void setResDate(String resDate) {
 		this.resDate = resDate;
 	}
-	public Users getUser() {
+	public User getUser() {
 		return user;
 	}
-	public void setUser(Users user) {
+	public void setUser(User user) {
 		this.user = user;
 	}
 	public Manager getManager() {

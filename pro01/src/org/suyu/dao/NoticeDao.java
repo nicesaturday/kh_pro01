@@ -41,7 +41,6 @@ public class NoticeDao {
 	
 	public int insertNotice(String title,String content) {
 		int cnt = 0;
-		List<Notice> noticeList = new ArrayList<Notice>();
 		try {
 			con = db.connect();
 			try {
