@@ -42,9 +42,9 @@ public class UserLogin extends HttpServlet {
 		
 		UserDao ud = new UserDao();
 		User user = ud.getOneUser(email);
-		System.out.println(user.getEmail()+"haha");
 		
-		if(email.equals(user.getEmail()) && pw.equals(user.getPw())) {
+		
+		  if(email.equals(user.getEmail()) && pw.equals(user.getPw())) {
 			HttpSession session = request.getSession();
 			session.setAttribute("semail", user.getEmail());
 			session.setAttribute("sname", user.getName());
@@ -53,15 +53,14 @@ public class UserLogin extends HttpServlet {
 			view.forward(request, response);
 		} else if(email.equals(user.getEmail())) {
 			request.setAttribute("error", "비밀번호가 올바르지 않습니다.");
+			request.setAttribute("email", user.getEmail());
 			RequestDispatcher view = request.getRequestDispatcher("/user/login.jsp");
 			view.forward(request, response);
-		} 
-		  else {
+		} else {
 			request.setAttribute("error", "없는 사용자 입니다. 계정을 생성해 주세요.rr");
 			RequestDispatcher view = request.getRequestDispatcher("/user/login.jsp");
 			view.forward(request, response);
 		}
-		
 		
 		
 	}

@@ -62,13 +62,14 @@ public class UserDao {
 	
 	
 	public User getOneUser(String email) {
-		User result = null;
+		User result = new User();
 		try {
 			con = db.connect();
 			try {
 				pstmt = con.prepareStatement(MysqlDB.SELECT_ONE_USER);
 				pstmt.setString(1, email);
 				rs = pstmt.executeQuery();
+				
 				while(rs.next()) {
 					User user = new User(rs.getInt("id"),
 							                   rs.getString("resdate"),

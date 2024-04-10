@@ -12,7 +12,7 @@
   <form action="${hpath }/user_login" method="post" style="margin-top: 150px;">
   <div class="form-group container">
     <label for="title" style="text-align: center; width: 100%">이메일</label>
-    <input type="title" id="title" name="email" class="form-control"placeholder="이메일" max="100" required="required">
+    <input type="title" id="title" name="email" class="form-control"placeholder="이메일" max="100" required="required" value="${email }">
   </div>
  
   <div class="form-group container">
