@@ -9,12 +9,13 @@
    </div>
    <nav id="tnb">
        <ul>
-          <c:if test="${empty sid}" >
+          <c:if test="${empty sname}" >
           <li><a href="${hpath }/user_login">로그인</a></li>
           </c:if>
-          <c:if test="${not empty sid}" >
-          <li><a href="${hpath }/user">로그 아웃</a></li>
+          <c:if test="${not empty sname}" >
+          <li><a href="${hpath }/user_logout">로그 아웃</a></li>
           <li><a href="${hpath }/user">회원 정보</a></li>
+          <h2>어서오세요 ${sname }</h2>
           </c:if>
           <c:if test="${sid.equals('admin')}" >
           <li><a href="${hpath }/user">관리자 로그인</a></li>

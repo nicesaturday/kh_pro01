@@ -69,7 +69,6 @@ public class UserDao {
 				pstmt = con.prepareStatement(MysqlDB.SELECT_ONE_USER);
 				pstmt.setString(1, email);
 				rs = pstmt.executeQuery();
-				if(!rs.next()) return result;
 				while(rs.next()) {
 					User user = new User(rs.getInt("id"),
 							                   rs.getString("resdate"),

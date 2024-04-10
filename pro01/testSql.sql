@@ -12,5 +12,9 @@ update notice set visited = 0 where id = 14;
 select rownum from notice;
 
 
+desc users;
 select * from users;
 insert into users values(default , default , 'yain123' , '1234' , '±èµÎÇÑ');
+insert into users values(default , default , 'minsik' , '12345' , '±è¹Î½Ä');
+
+
