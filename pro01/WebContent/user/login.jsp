@@ -23,6 +23,16 @@
   
   
   <button class="btn btn-primary form-control container" type="submit">로그인</button>
+  <hr>
+  <button class="btn btn-info form-control container" type="button" id="join" onclick="onClick()">회원 가입</button>
+  <script>
+    const a = document.getElementById("join");
+    
+    function onClick() {
+    	location.href="/pro01/user_join_check";
+    }
+    
+  </script>
   </div>
 </form>
 <c:if test="${not empty error }">
