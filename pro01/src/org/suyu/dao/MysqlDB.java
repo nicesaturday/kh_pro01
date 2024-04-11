@@ -9,7 +9,7 @@ import java.sql.SQLException;
 public class MysqlDB implements SqlLang {
 	private Connection con = null;
 	
-	final static String URL = "jdbc:mysql://localhost:3306/master";
+	final static String URL = "jdbc:mysql://localhost:3309/master";
 	final static String USERID = "root";
 	final static String USERPW = "1234";
 	

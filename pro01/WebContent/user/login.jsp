@@ -17,7 +17,7 @@
  
   <div class="form-group container">
     <label for="content" style="text-align: center; width: 100%">비밀번호</label>
-    <textarea class="form-control" id="content" name="pw" placeholder="비밀번호" rows="3" required="required"></textarea>
+    <input class="form-control" id="content" name="pw" placeholder="비밀번호" rows="3" required="required"></input>
   </div>
   <div class="form-group container">
   

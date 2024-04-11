@@ -14,7 +14,7 @@
           </c:if>
           <c:if test="${not empty sname}" >
           <li><a href="${hpath }/user_logout">로그 아웃</a></li>
-          <li><a href="${hpath }/user">회원 정보</a></li>
+          <li><a href="${hpath }/user_info">회원 정보</a></li>
           <h2>어서오세요 ${sname }</h2>
           </c:if>
           <c:if test="${sid.equals('admin')}" >

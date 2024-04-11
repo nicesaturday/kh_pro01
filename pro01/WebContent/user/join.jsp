@@ -9,11 +9,11 @@
 </head>
 <body>
 <%@ include file="/header.jsp" %>
-  <form action="${hpath }/user_login" method="post" style="margin-top: 150px;">
+  <form action="${hpath }/user_join" method="post" style="margin-top: 150px;" onsubmit="return onSubmit(this)">
   <div class="form-group container">
     <label for="email" style="text-align: center; width: 100%">이메일</label>
-    <input type="email" id="email" name="email" class="form-control"placeholder="이메일" max="100" required="required">
-    <button class="btn btn-primary form-control container" onclick="onEClick()" type="submit" style="width: 20%"; id="e-btn">이메일 중복 확인</button>
+    <input type="text" id="email" name="email" class="form-control"placeholder="이메일" max="100" required="required">
+    <button class="btn btn-primary form-control container" onclick="onEClick()" type="button" style="width: 60%"; id="e-btn" >이메일 중복 확인</button>
   </div>
   
   <div class="form-group container">
@@ -44,16 +44,29 @@
   </div>
 </c:if>
 <script>
+  function onSubmit(f) {
+	  if(f.pw.value != pw2.value) {
+		  alert("비밀번호가 서로 맞지 않습니다.");
+		  $("#pw2").css("backgroundColor","#FF0000");
+		  return false;
+	  }
+	  if(!f.email.hasAttribute("readonly")) {
+		  alert("아이디 중복 검사를 하지 않으셨습니다.");
+		  return false;
+	  }
+	  return true;
+  }
+
   function onEClick() {
-	  if($("#email").val() = ""){
-		  alret("이메일을 입력하세요.");
+	  if($("#email").val() == ""){
+		  alert("이메일을 입력하세요.");
 		  $("#email").focus();
 		  return;
 	  }
 	  
 	  let params = {email : $("#email").val()};
 	  $.ajax({
-		  url:"${hpath}/user_join_email_check",
+		  url:"${ipath }/user_join_email_check",
 		  type:"post",
 		  dataType:"JSON",
 		  data:params,
@@ -62,10 +75,11 @@
 			  if(!idCk) {
 				  $("#e-btn").css("backgroundColor","#00FF00");
 				  $("#e-btn").off("click");
-				  $("#e-btn").vaㅣ() = "아이디 사용 가능";
+				  $("#email").prop('readonly',true);
+				  $("#e-btn").text("아이디 사용 가능");
 			  } else{
 				  $("#e-btn").css("backgroundColor","#FF0000");
-				  $("#e-btn").vaㅣ() = "이미 존재하는 이메일 입니다.";
+				  $("#e-btn").text("이미 존재하는 이메일 입니다.");
 				  return;
 			  }
 			  

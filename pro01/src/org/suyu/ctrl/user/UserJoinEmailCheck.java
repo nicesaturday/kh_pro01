@@ -34,14 +34,13 @@ public class UserJoinEmailCheck extends HttpServlet {
 		UserDao ud = new UserDao();
 		String email = request.getParameter("email");
 		User user = ud.getOneUser(email);
-		System.out.println(user.getEmail());
 		JSONObject json = new JSONObject();
-		if(user.getEmail() == null) {
-			json.put("result", false);
+		if(user.getEmail() != null) {
+			json.put("result", true);
 			PrintWriter out = response.getWriter();
 			out.println(json.toString());
 		} else {
-			json.put("result", true);
+			json.put("result", false);
 			PrintWriter out = response.getWriter();
 			out.println(json.toString());
 		}
