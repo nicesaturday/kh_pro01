@@ -1,28 +1,29 @@
 package org.suyu.dto;
 
-import org.suyu.person.Manager;
-import org.suyu.person.User;
+
 
 public class Qna {
 	private int id;
 	private int pLevel;
+	private int parid;
 	private String title;
 	private String content;
-	private int visited;
 	private String resDate;
-	private User user;
-	private Manager manager;
-	public Qna(int id, int pLevel, String title, String content, int visited, String resDate, User user,
-			Manager manager) {
+	private int visited;
+	private String aid;
+	
+	public Qna() {}
+	
+	public Qna(int id, int pLevel, int parid, String title, String content, String resDate, int visited, String aid) {
 		super();
 		this.id = id;
 		this.pLevel = pLevel;
+		this.parid = parid;
 		this.title = title;
 		this.content = content;
-		this.visited = visited;
 		this.resDate = resDate;
-		this.user = user;
-		this.manager = manager;
+		this.visited = visited;
+		this.aid = aid;
 	}
 	public int getId() {
 		return id;
@@ -36,6 +37,12 @@ public class Qna {
 	public void setpLevel(int pLevel) {
 		this.pLevel = pLevel;
 	}
+	public int getParid() {
+		return parid;
+	}
+	public void setParid(int parid) {
+		this.parid = parid;
+	}
 	public String getTitle() {
 		return title;
 	}
@@ -48,37 +55,30 @@ public class Qna {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public int getVisited() {
-		return visited;
-	}
-	public void setVisited(int visited) {
-		this.visited = visited;
-	}
 	public String getResDate() {
 		return resDate;
 	}
 	public void setResDate(String resDate) {
 		this.resDate = resDate;
 	}
-	public User getUser() {
-		return user;
+	public int getVisited() {
+		return visited;
 	}
-	public void setUser(User user) {
-		this.user = user;
+	public void setVisited(int visited) {
+		this.visited = visited;
 	}
-	public Manager getManager() {
-		return manager;
+	public String getAid() {
+		return aid;
 	}
-	public void setManager(Manager manager) {
-		this.manager = manager;
+	public void setAid(String aid) {
+		this.aid = aid;
 	}
 	@Override
 	public String toString() {
-		return "Qna [id=" + id + ", pLevel=" + pLevel + ", title=" + title + ", content=" + content + ", visited="
-				+ visited + ", resDate=" + resDate + ", user=" + user + ", manager=" + manager + "]";
+		return "Qna [id=" + id + ", pLevel=" + pLevel + ", parid=" + parid + ", title=" + title + ", content=" + content
+				+ ", resDate=" + resDate + ", visited=" + visited + ", aid=" + aid + "]";
 	}
 	
-	
-	
+
 	
 }
