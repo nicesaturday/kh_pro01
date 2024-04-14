@@ -1,6 +1,7 @@
 package org.suyu.ctrl.user;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,16 +14,16 @@ import org.suyu.dao.UserDao;
 import org.suyu.person.User;
 
 /**
- * Servlet implementation class UserInfo
+ * Servlet implementation class UserManage
  */
-@WebServlet("/user_info")
-public class UserInfo extends HttpServlet {
+@WebServlet("/user_manage")
+public class UserManage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UserInfo() {
+    public UserManage() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,9 +32,25 @@ public class UserInfo extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		RequestDispatcher view = request.getRequestDispatcher("/user/userInfo.jsp");
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
+		
+		UserDao ud = new UserDao();
+		List<User> userLIst = ud.getUserList();
+		
+		request.setAttribute("arr", userLIst);
+		
+		RequestDispatcher view = request.getRequestDispatcher("/user/userManage.jsp");
 		view.forward(request, response);
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }

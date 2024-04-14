@@ -39,7 +39,13 @@
        <h2>${error }</h2>
      </div>
    </c:if>
-   
-   <button type="button" class="btn btn-info" style="color: #0000;"><a href="${hpath }/notice_upload" >글작성</a></button> 
+   <c:if test="${semail eq 'admin' }">
+     <button type="button" class="btn btn-info" style="color: #ffff;" onclick="onClick()">글작성</button>
+     </c:if>
+   <script>
+   function onClick(){
+	   location.href="${hpath }/notice_upload"
+   }
+   </script> 
 </body>
 </html>

@@ -42,10 +42,6 @@ public class Notilist extends HttpServlet {
 		NoticeDao nd = new NoticeDao();
 		arr = nd.getNoticeList();
 		
-		
-		
-		
-		
 		request.setAttribute("arr", arr);
 		request.getAttribute("cnt");
 		RequestDispatcher view = request.getRequestDispatcher("/notice/noticeList.jsp");

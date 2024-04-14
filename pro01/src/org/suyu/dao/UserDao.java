@@ -93,6 +93,8 @@ public class UserDao {
 	
 	
 	
+	
+	
 	public int deleteUser(int id) {
 		int cnt = 0;
 		try {
@@ -109,6 +111,28 @@ public class UserDao {
 		} finally {
 			db.close(con, pstmt);
 		}
+		return cnt;
+	}
+	
+	public int editUser(String email,String pw,String name) {
+		int cnt = 0;
+		try {
+			con = db.connect();
+			try {
+				pstmt = con.prepareStatement(MysqlDB.UPDATE_ONE_USER);
+				pstmt.setString(1, pw);
+				pstmt.setString(2, name);
+				pstmt.setString(3, email);
+				cnt = pstmt.executeUpdate();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			db.close(con, pstmt);
+		}
+
 		return cnt;
 	}
 	

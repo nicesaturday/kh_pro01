@@ -16,11 +16,26 @@
      <div class="col">content</div>
      <div>${data.content }</div>
    </div>
-   
    <div class="btn-group" role="group" aria-label="Basic example">
-  <a href="${ipath }/notilist" class="btn btn-secondary">글목록</a>
-  <a href="${ipath }/delete_notice_one?id=${data.id }" class="btn btn-secondary">글 삭제</a>
-  <a href="${ipath }/notice_edit?id=${data.id}" class="btn btn-secondary">글수정</a>
+     <button type="button" class="btn btn-info" style="color: #ffff;" onclick="onClick1()">글목록</button>
+   <c:if test="${semail eq 'admin' }">
+     <button type="button" class="btn btn-danger" style="color: #ffff;" onclick="onClick2()">글 삭제</button>
+
+     <button type="button" class="btn btn-warning" style="color: #ffff;" onclick="onClick3()">글수정</button>
+   </c:if>
+
 </div>
+<script>
+  function onClick1(){
+	  location.href="${ipath }/notilist";
+  }
+  function onClick2(){
+	  location.href="${ipath }/delete_notice_one?id=${data.id }";
+  }
+  function onClick3(){
+	  location.href="${ipath }/notice_edit";
+  }
+  
+</script>
 </body>
 </html>

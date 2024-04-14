@@ -19,7 +19,7 @@
   </div>
 
 
-   <h2></h2>
+  <hr>
    <div class="btn-group">
   	 <a href="${hpath }/user_edit" class="btn btn-warning">회원 정보 수정</a>
      <a href="${hpath }/user_out_self?id=${sid }" class="btn btn-danger">회원 탈퇴</a>

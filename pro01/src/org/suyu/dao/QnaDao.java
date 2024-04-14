@@ -16,7 +16,7 @@ public class QnaDao {
 	private ResultSet rs = null;
 	private MysqlDB db = new MysqlDB();
 	 
-	public List<Qna> getUserList() {
+	public List<Qna> getQnaList() {
 		List<Qna> qnaList = new ArrayList<Qna>();
 		try {
 	    	con = db.connect();
@@ -30,7 +30,7 @@ public class QnaDao {
 	    			                   rs.getString("content"),
 	    			                   rs.getString("resdate"),
 	    			                   rs.getInt("visited"),
-	    			                   rs.getString("aid")
+	    			                   rs.getString("aemail")
 	    			 );
 	    	 qnaList.add(qna);
 	    	
@@ -43,15 +43,42 @@ public class QnaDao {
 	    return qnaList;
 	}
 	
-	public int newQuestion(String title, String content , String aid) {
+	public int newQuestion(String title, String content , String email) {
 		int cnt = 0;
 		try {
 			con = db.connect();
 			try {
-				pstmt = con.prepareStatement(MysqlDB.NEW_QUESTION);
+				pstmt = con.prepareStatement(MysqlDB.INSERT_QUESTION);
 				pstmt.setString(1, title);
 				pstmt.setString(2, content);
-				pstmt.setString(3, aid);
+				pstmt.setString(3, email);
+				cnt = pstmt.executeUpdate();
+				pstmt = null;
+				
+				pstmt = con.prepareStatement(MysqlDB.ADD_PARID);
+				pstmt.executeUpdate();
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			db.close(con, pstmt);
+		}
+		return cnt;
+	}
+	
+	public int newAnswer(int parid , String title, String content , String email) {
+		int cnt = 0;
+		try {
+			con = db.connect();
+			try {
+				pstmt = con.prepareStatement(MysqlDB.INSERT_ANSWER);
+				pstmt.setInt(1, parid);
+				pstmt.setString(2, title);
+				pstmt.setString(3, content);
+				pstmt.setString(4, email);
 				cnt = pstmt.executeUpdate();
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -65,11 +92,20 @@ public class QnaDao {
 	}
 	
 	
-	public Qna getOneQna(int id) {
+	public Qna getOneQna(int id, boolean viewBreak) {
 		Qna result = new Qna();
 		try {
 			con = db.connect();
 			try {
+				
+				if(viewBreak) {
+					pstmt = con.prepareStatement(MysqlDB.UPDATE_VISITED_QNA);
+					pstmt.setInt(1, id);
+					pstmt.executeUpdate();
+					pstmt = null;
+				}
+				
+
 				pstmt = con.prepareStatement(MysqlDB.SELECT_ONE_QNA);
 				pstmt.setInt(1, id);
 				rs = pstmt.executeQuery();
@@ -82,7 +118,7 @@ public class QnaDao {
 			                   rs.getString("content"),
 			                   rs.getString("resdate"),
 			                   rs.getInt("visited"),
-			                   rs.getString("aid")
+			                   rs.getString("aemail")
 			 );
 					result = qna;
 				}
@@ -120,13 +156,13 @@ public class QnaDao {
 		return cnt;
 	}
 	
-	public int deleteQuestion(int id) {
+	public int deleteQuestion(int parid) {
 		int cnt = 0;
 		try {
 			con = db.connect();
 			try {
 				pstmt = con.prepareStatement(MysqlDB.DELETE_ONE_QUESTION);
-				pstmt.setInt(1, id);
+				pstmt.setInt(1, parid);
 				cnt = pstmt.executeUpdate();
 			} catch (SQLException e) {
 				e.printStackTrace();

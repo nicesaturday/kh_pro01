@@ -3,24 +3,29 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:set var="hpath" value="<%=request.getContextPath() %>"/> <!-- 최상위 패스(고정패스) -->
+<script src="${hpath }/js/jquery-3.2.1.min.js"></script>
+<script src="${hpath }/js/popper.min.js"></script>
 <header>
    <div class="logo_wrap">
        <a href="/pro01"><img src="${hpath }/img/favicon.png" style"width=50px; height="50px"" alt="suyu"/></a>
    </div>
    <nav id="tnb">
-       <ul>
+       <div class="btn-group" role="group" aria-label="Basic outlined example">
           <c:if test="${empty sname}" >
-          <li><a href="${hpath }/user_login">로그인</a></li>
+          
+          <button type="button" class="btn btn-outline-primary"><a href="${hpath }/user_login">로그인</a></button>
           </c:if>
           <c:if test="${not empty sname}" >
-          <li><a href="${hpath }/user_logout">로그 아웃</a></li>
-          <li><a href="${hpath }/user_info">회원 정보</a></li>
           <h2>어서오세요 ${sname }</h2>
+            <button type="button" class="btn btn-outline-primary"><a href="${hpath }/user_logout">로그 아웃</a></button>
+          <c:choose>
+            <c:when test="${semail.equals('admin') }"><button type="button" class="btn btn-outline-primary" onclick="onClick1()">회원 관리</button>
+   </c:when>
+            <c:otherwise><button type="button" class="btn btn-outline-primary" onclick="onClick2()">회원 정보</button></c:otherwise>
+          </c:choose>
           </c:if>
-          <c:if test="${sid.equals('admin')}" >
-          <li><a href="${hpath }/user">관리자 로그인</a></li>
-          </c:if>
-       </ul>
+       </div>  
+    
    </nav>
    <nav id="gnb" style="width: 100%; ">
       <ul class="main_menu" style="list-style-type: none; display: flex; justify-content: space-around;">
@@ -50,6 +55,16 @@
           </ul>
         </li>
          <li><a href="${hpath }/notilist">공지사항</a></li>
+         <li><a href="${hpath }/qnalist">QnA</a></li>
       </ul>   
    </nav>
+   <script>
+    function onClick1() {
+    	location.href="${hpath }/user_manage";
+    }
+    function onClick2() {
+    	location.href="${hpath }/user_info?id=${semail }";
+    }
+    
+   </script> 
 </header>
