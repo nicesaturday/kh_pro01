@@ -104,7 +104,7 @@
         </li>
         <li><a href="">교통 및 상권</a>
           <ul>
-            <li>교통편</li>
+            <li><a href="${hpath }/trafficlist">교통편</a></li>
             <li>주변 맛집</li>
             <li>주변 상권</li>
             <li>주요 시설</li>

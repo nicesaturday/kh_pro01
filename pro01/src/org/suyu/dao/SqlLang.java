@@ -25,6 +25,8 @@ public interface SqlLang {
 	String DELETE_ONE_QUESTION = "delete from qna where parid = ?";
 	String DELETE_ONE_ANSWER = "delete from qna where id = ?";
 	
+	String SELECT_TRAFFIC = "select * from traffic";
+	
 	public Connection connect();
 	public void close(Connection con);
 	public void close(Connection con ,PreparedStatement pstmt);
