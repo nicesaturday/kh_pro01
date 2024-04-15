@@ -8,6 +8,6 @@ public class GetOneUserTest {
 		UserDao ud = new UserDao();
 		User user = ud.getOneUser("yain123");
 		
-		System.out.println(user.getName());
+		System.out.println(user.toString());
 	}
 }

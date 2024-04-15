@@ -6,18 +6,18 @@
 <hr>    
 <footer>
 	<div class="footer_container">
-		<nav id="fnb">
+		<nav id="fnb" style="padding-top: 10px;">
 			<ul>
-				<li><a href="${hpath }/member/terms.jsp">회원약관</a></li>
-				<li><a href="${hpath }/member/policy.jsp">개인정보처리방침</a></li>
+				<li><a href="${fpath }/user/terms.jsp">회원약관</a></li>
+				<li><a href="${fpath }/user/policy.jsp">개인정보처리방침</a></li>
 			</ul>
 		</nav>
-		<div id="loc">
+		<div id="loc" style="margin-left: 20px; padding-top: 10px;">
 			<select name="sel" id="sel" onchange="locate()">
 				<option value="">해당 관광서</option>
-				<option value="https://www.geumcheon.go.kr/portal/contents.do?key=651">가산동주민센터</option>
-				<option value="https://www.smpa.go.kr/user/nd19306.do">가산파출소</option>
-				<option value="https://www.life114.co.kr/html/board/view.asp?M_SEQ=1877802#google_vignette">서울가산디지털우체국</option>
+				<option value="https://www.gangbuk.go.kr/www/index.do">강북구청</option>
+				<option value="https://www.gangbuk.go.kr/suyu1/index.do">수유1동 주민센터</option>
+				<option value="https://smpa.go.kr/user/nd1482.do">강북 경찰서</option>
 			</select>
 		</div>
 		<script>
@@ -29,7 +29,7 @@
 		}
 		</script>
 		<br><br>
-		<div id="copyright">
+		<div id="copyright" style="color: #EFEFFB; margin-left: 20px;">
 			<p class="addr">서울특별시 강북구 수유동 소개, 대표전화 : 02-2627-2114(120 다산콜센터로연결)</p>
 			<p class="copy">COPYRIGHT(C) SEOUL SUYU INTRO. ALL RIGHTS RESERVED.</p>
 		</div>

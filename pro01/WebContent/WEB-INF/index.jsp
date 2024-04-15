@@ -2,13 +2,17 @@
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>${title }</title>
-<c:set var="path0" value="<%=request.getContextPath() %>"/> 
 <%@ include file="/head.jsp"%>
+
+<link href="${ipath }/css/bootstrap.5.1.3.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="${ipath }/js/bootstrap.bundle.5.1.3.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 </head>
 <body>
@@ -17,17 +21,17 @@
 <div id="header">
    <%@ include file="/header.jsp" %>
 </div>
-<div id="wrapper" class="container" style="width: 1200px;">
-   <h2>콘텐츠 영역</h2>
-<%@ include file="/contents.jsp" %>
+<div id="wrapper" style="display: flex; width: 100%; justify-content: center">
+ 
 
-<div id="carouselExampleIndicators" class="carousel slide">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div class="carousel-inner">
+
+
+
+
+
+
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="width:100%; max-width: 1000px; min-width: 800px;" >
+  <div class="carousel-inner" style="display: flex; width: 100%">
     <div class="carousel-item active">
       <img src="${hpath }/img/419.jpg" class="d-block w-100" alt="...">
     </div>
@@ -35,18 +39,42 @@
       <img src="${hpath }/img/akademyhouse.jpg" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
+      <img src="${hpath }/img/BBalfes.jpg" class="d-block w-100" alt="...">
     </div>
+    <div class="carousel-item">
+      <img src="${hpath }/img/bukhansan.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="${hpath }/img/suyu_library.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="${hpath }/img/suyumukja.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="${hpath }/img/uicheanfes.jpeg" class="d-block w-100" alt="...">
+    </div>
+    
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
   </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
