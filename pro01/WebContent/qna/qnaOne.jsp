@@ -29,12 +29,32 @@
 <%@ include file="/header.jsp" %>
 <div id="wrapper">
  <div style="display: flex; width: 100%; justify-content: center;">
-   <div class="card text-bg-success mb-3" style="max-width: 18rem; width: 100%;">
-  <div class="card-header">${data.title }</div>
-  <div class="card-body">
-    <p class="card-text">${data.content }</p>
-  </div>
-</div>
+   
+
+				<table class="table">
+					<tbody>
+						
+						<tr>
+							<th style="background-color: #848484"><label for="title">제목</label></th>
+							<td>
+								<input type="text" name="title" id="title" class="form-control" maxlength="100"  readonly="readonly" value="${data.title }">
+							</td>
+						</tr>
+						<tr>
+							<th style="background-color: #6E6E6E"><label for="content">내용</label></th>
+							<td>
+								<textarea name="content" id="content" rows="8" cols="80" class="form-control" readonly="readonly">${data.content }</textarea>
+							</td>
+						</tr>
+				
+					</tbody>
+				</table>
+				<hr>
+
+
+
+
+
 </div>
   <c:if test="${data.aemail ne 'admin' and data.aemail eq semail }">
  <button type="button" class="btn btn-danger" style="color: #ffff;" onclick="onClick()">삭제하기</button>

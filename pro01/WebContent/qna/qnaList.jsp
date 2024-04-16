@@ -24,7 +24,7 @@
 <body>
 <%@ include file="/header.jsp" %>
 <div id="wrapper">
-<table class="table" id="tb1">
+<table class="table"  id="tb1">
 <thead>
   <tr>
     <th>번호</th>
@@ -38,18 +38,24 @@
   <c:if test="${not empty arr }">
   <c:forEach var="data" items="${arr }" varStatus="status">
     <tr class="table-light">
+            <c:if test="${data.pLevel eq 1 }">
             <td class="table-light">${status.index + 1}</td>
             <td class="table-light">
-            <c:if test="${data.pLevel eq 1 }">
              <a href="${hpath }/q_one?id=${data.id }&aemail=${data.aemail }">${data.title }</a>
-            </c:if>
-            <c:if test="${data.pLevel eq 2 }">
-             ┗ 답변 => <a href="${hpath }/q_one?id=${data.id }&aemail=${data.aemail }">${data.title }</a>
-            </c:if>
             </td>
             <td class="table-light">${data.resDate }</td>
             <td class="table-light">${data.visited }</td>
             <td class="table-light">${data.aemail }</td>            
+          </c:if>
+          <c:if test="${data.pLevel eq 2 }">
+          <td class="table-primary">${status.index + 1}</td>
+            <td class="table-primary">
+               ┗ 답변 => <a href="${hpath }/q_one?id=${data.id }&aemail=${data.aemail }">${data.title }</a>
+          </td>
+          <td class="table-primary">${data.resDate }</td>
+            <td class="table-primary">${data.visited }</td>
+            <td class="table-primary">${data.aemail }</td>            
+          </c:if>
           </tr>
   </c:forEach>
   </c:if>

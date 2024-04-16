@@ -10,13 +10,24 @@
 <body>
 <%@ include file="/header.jsp" %>
 <div id="wrapper">
-	<div class="card text-bg-light mb-3" style="max-width: 18rem;">
-  <div class="card-header">당신의 이메일 ${semail }</div>
-  <div class="card-body">
-    <h5 class="card-title">어서 오세요</h5>
-    <p class="card-text">수유 사이트 유저 카드</p>
-  </div>
-  </div>
+	<table class="table">
+					<tbody>
+						<tr>
+							<th style="background-color: #6E6E6E"><label for="name">이름</label></th>
+							<td>
+								<input name="name" id="name" class="form-control" value="${sname }" readonly="readonly">
+							</td>
+						</tr>
+						<tr>
+							<th style="background-color: #848484"><label for="email">이메일</label></th>
+							<td>
+								<input type="text" name="email" id="email" class="form-control" maxlength="100"  readonly="readonly" value="${semail }">
+							</td>
+						</tr>
+						
+					</tbody>
+				</table>
+				<hr>
 
 
   <hr>

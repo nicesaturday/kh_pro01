@@ -11,13 +11,14 @@
 <meta name="subject" content="수유역  소개">
 <meta name="description" content="수유동 , 419 , 우이천 , 수유시장 ">
 <meta name="keyword" content="수유동 , 419 , 우이천 , 수유시장">
-<link rel="icon" href="${ipath }/img/favicon.png" />
-<link rel="shortcut" href="${ipath }/img/favicon.png" />
+<link rel="icon" href="${ipath }/img/suyufavi.png" />
+<link rel="shortcut" href="${ipath }/img/suyufavi.png" />
 <meta property="og:url" content="">
 <meta property="og:title" content="suyu">
 <meta property="og:description" content="수유동 , 419 , 우이천 , 수유시장">
 <meta property="og:type" content="website">
-<meta property="og:image" content="${ipath }/img/favicon.png">
+<meta property="og:image" content="${ipath }/img/suyufavi.png">
+<link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="${ipath }/css/base.css"/>
 <link href="${ipath }/css/bootstrap.5.1.3.min.css" rel="stylesheet"  crossorigin="anonymous">
 <script src="${ipath }/js/bootstrap.bundle.5.1.3.min.js"  crossorigin="anonymous"></script>

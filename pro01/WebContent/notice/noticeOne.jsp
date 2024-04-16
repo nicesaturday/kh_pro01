@@ -22,14 +22,36 @@
 <body>
 <%@ include file="/header.jsp" %>
 <div id="wrapper">
-   <div class="row">
-     <div class="col">id</div>
-     <div>${data.id }</div>
-     <div class="col">title</div>
-     <div>${data.title }</div>
-     <div class="col">content</div>
-     <div>${data.content }</div>
-   </div>
+
+
+
+   <table class="table">
+					<tbody>
+						<tr>
+							<th style="background-color: #6E6E6E"><label for="content">id</label></th>
+							<td>
+								<input name="id" id="id" class="form-control" value="${data.id }" readonly="readonly">
+							</td>
+						</tr>
+						<tr>
+							<th style="background-color: #848484"><label for="title">제목</label></th>
+							<td>
+								<input type="text" name="title" id="title" class="form-control" maxlength="100"  readonly="readonly" value="${data.title }">
+							</td>
+						</tr>
+						<tr>
+							<th style="background-color: #A4A4A4"><label for="content">내용</label></th>
+							<td>
+								<textarea name="content" id="content" rows="8" cols="80" class="form-control" readonly="readonly">${data.content }</textarea>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<hr>
+   
+   
+   
+   
    <div class="btn-group" role="group" aria-label="Basic example">
      <button type="button" class="btn btn-info" style="color: #ffff;" onclick="onClick1()">글목록</button>
    <c:if test="${semail eq 'admin' }">

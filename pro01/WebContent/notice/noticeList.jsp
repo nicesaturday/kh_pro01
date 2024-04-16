@@ -19,8 +19,8 @@
     <h2>공지사항</h2>
    <table class="table table-striped">
     <thead>
-          <tr class="table-light">
-            <th>id</th>
+          <tr>
+            <th>번호</th>
             <th>제목</th>
             <th>내용</th>
             <th>작성 일</th>
@@ -28,9 +28,9 @@
           </tr>
     </thead>
     <tbody>
-       <c:forEach var="data" items="${arr }">
+       <c:forEach var="data" items="${arr }" varStatus="status">
           <tr class="table-light">
-            <td class="table-light">${data.id }</td>
+            <td class="table-light">${status.index + 1}</td>
             <td class="table-light"><a href="${hpath }/notice_one?id=${data.id }">${data.title }</a></td>
             <td class="table-light">${data.content }</td>
             <td class="table-light">${data.resdate }</td>

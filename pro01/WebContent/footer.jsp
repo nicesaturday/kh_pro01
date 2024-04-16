@@ -5,7 +5,7 @@
 <c:set var="fpath" value="<%=request.getContextPath() %>" />
 <hr>    
 <footer>
-	<div class="footer_container">
+	
 		<nav id="fnb" style="padding-top: 10px;">
 			<ul>
 				<li><a href="${fpath }/user/terms.jsp">회원약관</a></li>
@@ -17,7 +17,7 @@
 				<option value="">해당 관광서</option>
 				<option value="https://www.gangbuk.go.kr/www/index.do">강북구청</option>
 				<option value="https://www.gangbuk.go.kr/suyu1/index.do">수유1동 주민센터</option>
-				<option value="https://smpa.go.kr/user/nd1482.do">강북 경찰서</option>
+				<option value="https://smpa.go.kr/home/homeIndex.do?menuCode=gb">강북 경찰서</option>
 			</select>
 		</div>
 		<script>
@@ -33,5 +33,5 @@
 			<p class="addr">서울특별시 강북구 수유동 소개, 대표전화 : 02-2627-2114(120 다산콜센터로연결)</p>
 			<p class="copy">COPYRIGHT(C) SEOUL SUYU INTRO. ALL RIGHTS RESERVED.</p>
 		</div>
-	</div> 
+
 </footer>
