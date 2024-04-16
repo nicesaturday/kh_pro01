@@ -8,12 +8,11 @@
 <%@ include file="/head.jsp" %>
 </head>
 <body>
-<div id="contents">
-
+<%@ include file="/header.jsp" %>
+<div id="wrapper">
 	<section class="page" id="page1">
 		<div style="width:1400px; margin:0 auto;">
 		<div class="logo_wrap" style="display: flex; padding-bottom: 15px;">
-       			<a href="/pro01"><img src="${ipath }/img/favicon.png" style"width=50px; height="50px"" alt="suyu"/></a>
        			<h3 class="page_title">공지사항 글 수정</h3>
   		</div>
 			
@@ -61,5 +60,6 @@
 		</div>
 	</section>	
 </div>
+  <%@ include file="/footer.jsp" %>
 </body>
 </html>

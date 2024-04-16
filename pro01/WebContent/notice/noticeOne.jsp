@@ -6,8 +6,22 @@
 <meta charset="UTF-8">
 <title>수유 - 게시판 ${data.id }</title>
 <%@ include file="/head.jsp" %>
+<script>
+  function onClick1(){
+	  location.href="${ipath }/notilist";
+  }
+  function onClick2(){
+	  location.href="${ipath }/delete_notice_one?id=${data.id }";
+  }
+  function onClick3(){
+	  location.href="${ipath }/notice_edit?id=${data.id }";
+  }
+  
+</script>
 </head>
 <body>
+<%@ include file="/header.jsp" %>
+<div id="wrapper">
    <div class="row">
      <div class="col">id</div>
      <div>${data.id }</div>
@@ -23,19 +37,8 @@
 
      <button type="button" class="btn btn-warning" style="color: #ffff;" onclick="onClick3()">글수정</button>
    </c:if>
-
 </div>
-<script>
-  function onClick1(){
-	  location.href="${ipath }/notilist";
-  }
-  function onClick2(){
-	  location.href="${ipath }/delete_notice_one?id=${data.id }";
-  }
-  function onClick3(){
-	  location.href="${ipath }/notice_edit";
-  }
-  
-</script>
+</div>
+<%@ include file="/footer.jsp" %>
 </body>
 </html>

@@ -9,23 +9,38 @@
 </head>
 <body>
 <%@ include file="/header.jsp" %>
-  <form action="${ipath }/qna_upload" method="post" >
+<div id="wrapper">
+  <form action="${hpath }/qna_upload" method="post">
+				<table class="table">
+					<tbody>
+						
+						<tr>
+							<th style="background-color: #848484"><label for="title">제목</label></th>
+							<td>
+								<input type="text" name="title" id="title" class="form-control" maxlength="100"  required>
+							</td>
+						</tr>
+						<tr>
+							<th style="background-color: #6E6E6E"><label for="content">내용</label></th>
+							<td>
+								<textarea name="content" id="content" rows="8" cols="80" class="form-control"></textarea>
+							</td>
+						</tr>
+						<tr>
+							<th style="background-color: #848484"><label for="content">이메일</label></th>
+							<td>
+								<input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" value="${semail }" readonly="readonly" >
+							</td>
+						</tr>	
+					</tbody>
+				</table>
+				<hr>
+				<button type="submit" class="btn btn-primary">글 등록</button>
+			</form>
   
-  <div class="mb-3">
-    <label for="title" class="form-label">Title</label>
-    <input type="text" class="form-control" id="title" name="title">
-  </div>
   
-  <div class="mb-3">
-    <label for="content" class="form-label">Content</label>
-    <textarea type="textarea" class="form-control" id="content" name="content"></textarea>
+  
   </div>
-
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email</label>
-    <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" value="${semail }" readonly="readonly" >
-  </div>
-  <button id="btn" type="submit" class="btn btn-primary" >등록</button>
-  </form>
+  <%@ include file="/footer.jsp" %>
 </body>
 </html>

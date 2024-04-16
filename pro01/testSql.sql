@@ -33,13 +33,15 @@ update qna as q1 set q1.parid= (select id from qna order by id desc limit 1) as 
 UPDATE qna 
 SET parid = (SELECT id FROM (SELECT id FROM qna ORDER BY id DESC LIMIT 1) AS temp)
 WHERE id = (SELECT id FROM qna ORDER BY id DESC LIMIT 1);
-delete from qna ;
+delete from qna where id = 2;
 UPDATE qna AS q1 JOIN (SELECT id FROM qna ORDER BY id DESC LIMIT 1) AS q2 ON q1.id = q2.id SET q1.parid = q2.id;
 
 
 select * from traffic;
 desc traffic;
 create table traffic(id int AUTO_INCREMENT PRIMARY KEY, type varchar(100),num varchar(100), route varchar(1000),comment varchar(1000),uri varchar(1000));
+drop table traffic;
+
 
 
 insert into traffic values(default,

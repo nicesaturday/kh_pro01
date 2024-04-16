@@ -9,29 +9,44 @@
 </head>
 <body>
 <%@ include file="/header.jsp" %>
-  <form action="${ipath }/answer_upload" method="post" >
+<div id="wrapper">
+  <form action="${ipath }/answer_upload" method="post">
+				<table class="table">
+					<tbody>
+						<tr>
+							<th style="background-color: #848484"><label for="title">제목</label></th>
+							<td>
+								 <input type="text" class="form-control" id="title" name="title" required="required">
+							</td>
+						</tr>
+						<tr>
+							<th style="background-color: #6E6E6E"><label for="content">내용</label></th>
+							<td>
+								  <textarea type="textarea" class="form-control" id="content" name="content" required="required"></textarea>
+							</td>
+						</tr>
+						<tr>
+							<th style="background-color: #848484"><label for="email">이메일</label></th>
+							<td>
+								<input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" value="${semail }" readonly="readonly" >
+							</td>
+						</tr>
+						<tr>
+							<th style="background-color: #A4A4A4"><label for="parid">PARID</label></th>
+							<td>
+								  <input type="text" class="form-control" name="parid" id="exampleInputEmail1" aria-describedby="emailHelp" value="${parid }" readonly="readonly" >
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<hr>
+				<button type="submit" class="btn btn-primary">글 수정</button>
+			</form>
   
-  <div class="mb-3">
-    <label for="title" class="form-label">Title</label>
-    <input type="text" class="form-control" id="title" name="title">
-  </div>
   
-  <div class="mb-3">
-    <label for="content" class="form-label">Content</label>
-    <textarea type="textarea" class="form-control" id="content" name="content"></textarea>
-  </div>
 
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email</label>
-    <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" value="${semail }" readonly="readonly" >
   </div>
+<%@ include file="/footer.jsp" %>
   
-   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Parid</label>
-    <input type="text" class="form-control" name="parid" id="exampleInputEmail1" aria-describedby="emailHelp" value="${parid }" readonly="readonly" >
-  </div>
-  
-  <button id="btn" type="submit" class="btn btn-primary" >등록</button>
-  </form>
 </body>
 </html>

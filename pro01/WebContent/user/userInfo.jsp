@@ -9,7 +9,7 @@
 </head>
 <body>
 <%@ include file="/header.jsp" %>
-
+<div id="wrapper">
 	<div class="card text-bg-light mb-3" style="max-width: 18rem;">
   <div class="card-header">당신의 이메일 ${semail }</div>
   <div class="card-body">
@@ -24,5 +24,7 @@
   	 <a href="${hpath }/user_edit" class="btn btn-warning">회원 정보 수정</a>
      <a href="${hpath }/user_out_self?id=${sid }" class="btn btn-danger">회원 탈퇴</a>
    </div>
+   </div>
+  <%@ include file="/footer.jsp" %>
 </body>
 </html>

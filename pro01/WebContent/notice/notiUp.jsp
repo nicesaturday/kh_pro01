@@ -8,26 +8,41 @@
 <%@ include file="/head.jsp" %>
 </head>
 <body>
+<%@ include file="/header.jsp" %>
 
-   <form action="${ipath }/notice_upload" method="post" style="margin-top: 150px;">
-  <div class="form-group container">
-    <label for="title" style="text-align: center; width: 100%">제목</label>
-    <input type="title" id="title" name="title" class="form-control"placeholder="title" max="100" required="required">
-  </div>
- 
-  <div class="form-group container">
-    <label for="content" style="text-align: center; width: 100%">내용</label>
-    <textarea class="form-control" id="content" name="content" placeholder="content" rows="3" required="required"></textarea>
-  </div>
-  <div class="form-group container">
-  <button class="btn btn-primary form-control container" type="submit">등록</button>
-  </div>
-</form>
+
+
+   <div id="wrapper">
+     <form action="${ipath }/notice_upload" method="post">
+				<table class="table">
+					<tbody>
+						
+						<tr>
+							<th style="background-color: #848484"><label for="title">제목</label></th>
+							<td>
+								<input type="text" name="title" id="title" class="form-control" maxlength="100"  required>
+							</td>
+						</tr>
+						<tr>
+							<th style="background-color: #6E6E6E"><label for="content">내용</label></th>
+							<td>
+								<textarea name="content" id="content" rows="8" cols="80" class="form-control"></textarea>
+							</td>
+						</tr>
+						
+						
+					</tbody>
+				</table>
+				<hr>
+				<button type="submit" class="btn btn-primary">글 등록</button>
+			</form>
+   </div>
+
 <c:if test="${not empty error }">
   <div>
      <h2>${error }</h2>
   </div>
 </c:if>
-
+<%@ include file="/footer.jsp" %>
 </body>
 </html>

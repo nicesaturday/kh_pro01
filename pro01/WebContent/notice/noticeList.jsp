@@ -5,12 +5,18 @@
 <head>
 <meta charset="UTF-8">
 <title>${title }</title>
-
 <%@ include file="/head.jsp" %>
+<script>
+   function onClick(){
+	   location.href="${ipath }/notice_upload"
+   }
+   </script>
 </head>
 <body>
 <%@ include file="/header.jsp" %>
-  <h2>공지사항</h2>
+
+   <div id="wrapper">
+    <h2>공지사항</h2>
    <table class="table table-striped">
     <thead>
           <tr class="table-light">
@@ -42,10 +48,7 @@
    <c:if test="${semail eq 'admin' }">
      <button type="button" class="btn btn-info" style="color: #ffff;" onclick="onClick()">글작성</button>
      </c:if>
-   <script>
-   function onClick(){
-	   location.href="${hpath }/notice_upload"
-   }
-   </script> 
+</div>
+   <%@ include file="/footer.jsp" %>
 </body>
 </html>

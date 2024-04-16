@@ -23,6 +23,7 @@
 </head>
 <body>
 <%@ include file="/header.jsp" %>
+<div id="wrapper">
 <table class="table" id="tb1">
 <thead>
   <tr>
@@ -57,9 +58,10 @@
 <c:if test="${empty arr }">
    <h2 align="center">질문이 없습니다</h2>
   </c:if>
-  <c:if test="${not empty semail }">
+  <c:if test="${not empty semail  and semail ne 'admin'}">
    <button type="button" class="btn btn-info" style="color: #ffff;" onclick="onClick()">질문 하기</button>
   </c:if>
-  
+  </div>
+  <%@ include file="/footer.jsp" %>
 </body>
 </html>
