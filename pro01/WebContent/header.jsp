@@ -22,8 +22,23 @@
     function onClickLogOut() {
     	location.href="${hpath }/user_logout";
     }
+    function onClickHam() {
+    	if(document.querySelector(".navBar_menu").id == "navBar_hide"){
+    		document.querySelector(".navBar_menu").removeAttribute('id');
+    		document.querySelector(".navBar_icons").removeAttribute('id');
+    	} else {
+    		document.querySelector(".navBar_menu").id = "navBar_hide";
+    		document.querySelector(".navBar_icons").id = "navBar_hide";
+   	 	}
+    }
     
    </script>
+   <style>
+    a {
+	color:#fff;
+	text-decoration: none;
+}
+   </style>
 <header style="margin-bottom: 20px;">
   
  
@@ -37,15 +52,15 @@
 
        
        <div class="navBar_menu">
-          <li><a href="">수유 소개</a>
+          <li><a style="font-weight: 600;"  href="">수유 소개</a>
             <ul class="navBar_menu_son">
-            	<li>인구수</li>
+            	<li >인구수</li>
             	<li>오시는 길</li>
             	<li>역사</li>
             	<li>위치적 장점</li>
             </ul>
           </li>
-          <li><a href="">교통 및 상권</a>
+          <li><a style="font-weight: 600;"  href="">교통 및 상권</a>
             <ul class="navBar_menu_son">
                 <li><a href="${hpath }/trafficlist">교통편</a></li>
             	<li>주변 맛집</li>
@@ -53,7 +68,7 @@
             	<li>주요 시설</li>
             </ul>
           </li>
-          <li><a href="">행사</a>
+          <li><a style="font-weight: 600;"  href="">행사</a>
           	<ul class="navBar_menu_son">
           		<li>크리스마스 행사</li>
             	<li>419 축제</li>
@@ -62,16 +77,39 @@
             	<li>고려대 행진 축제</li>
           	</ul>	
           </li>
-          <li><a href="${hpath }/notilist">공지사항</a></li>
-          <li><a href="${hpath }/qnalist">QnA</a></li>
+          <li><a style="font-weight: 600;"  href="${hpath }/notilist">공지사항</a></li>
+          <li><a style="font-weight: 600;"  href="${hpath }/qnalist">QnA</a></li>
           
        </div>
+       
+       
+       
+       <div class="btn-group" role="group" aria-label="Basic outlined example">
+          <c:if test="${empty sname}" >         
+            <button type="button" class="btn btn-outline-primary" onclick="onClickLogin()">로그인</button>
+          </c:if>
+          <c:if test="${not empty sname}" >
+          <h2>어서오세요 ${sname }</h2>
+            <button type="button" class="btn btn-outline-primary" onclick="onClickLogOut()">로그 아웃</button>
+          <c:choose>
+            <c:when test="${semail.equals('admin') }"><button type="button" class="btn btn-outline-primary" onclick="onClickUserManage()">회원 관리</button></c:when>
+            <c:otherwise><button type="button" class="btn btn-outline-primary" onclick="onClickUserInfo()">회원 정보</button></c:otherwise>
+          </c:choose>
+          </c:if>
+       </div> 
        
        
        <ul class="navBar_icons">
        	<li><i class="fa-brands fa-x-twitter"></i></li>
        	<li><i class="fa-brands fa-instagram"></i></li>
        </ul>
+       
+       <div class="navBar_ham" onclick="onClickHam()">
+         <a href="#"><i class="fa-solid fa-bars"></i></a>
+       </div>
+       
+       
+       
        
        
     </nav>
@@ -88,19 +126,7 @@
  
  
  <%--   <nav id="tnb">
-       <div class="btn-group" role="group" aria-label="Basic outlined example">
-          <c:if test="${empty sname}" >         
-            <button type="button" class="btn btn-outline-primary" onclick="onClickLogin()">로그인</button>
-          </c:if>
-          <c:if test="${not empty sname}" >
-          <h2>어서오세요 ${sname }</h2>
-            <button type="button" class="btn btn-outline-primary" onclick="onClickLogOut()">로그 아웃</button>
-          <c:choose>
-            <c:when test="${semail.equals('admin') }"><button type="button" class="btn btn-outline-primary" onclick="onClickUserManage()">회원 관리</button></c:when>
-            <c:otherwise><button type="button" class="btn btn-outline-primary" onclick="onClickUserInfo()">회원 정보</button></c:otherwise>
-          </c:choose>
-          </c:if>
-       </div>  
+        
     </nav>
    </div>
    <nav id="gnb" style="width: 100%;" >

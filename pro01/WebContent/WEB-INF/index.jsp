@@ -28,7 +28,7 @@
 
 
 
-<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="width:100%; max-width: 1000px; min-width: 800px;" >
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="width:100%; max-width: 900px; " >
   <div class="carousel-inner" style="display: flex; width: 100%">
     <div class="carousel-item active">
       <img src="${hpath }/img/419.jpg" class="d-block w-100" alt="...">
