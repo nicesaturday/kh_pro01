@@ -4,13 +4,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>약관의 동의</title>
 <%@ include file="/head.jsp" %>
+  
 </head>
 <body>
 <%@ include file="/header.jsp" %>
+<div id="wrapper">
 <h4>회원 약관</h4>
-  <textarea rows="" cols="" readonly="readonly">
+  <textarea rows="" cols="" readonly="readonly" style="font-family: Georgia, serif; font-weight: 500">
      제 1 장 총칙
 
 제 1 조 (목적) 이 이용약관은 “수유 사이트는 (이하 "수 사이트")”에서 제공하는 인터넷 서비스(이하 '서비스')의 가입조건, 수 사이트와 이용자의 권리, 의무, 책임사항과 기타 필요한 사항을 규정함을 목적으로 합니다.
@@ -166,7 +168,7 @@
   
   
   <h4>개인정보 수집 및 활용</h4>
-  <textarea rows="" cols="" readonly="readonly">
+  <textarea rows="" cols="" readonly="readonly" style="font-family: Georgia, serif; font-weight: 500">
   수유 사이트
 이용조건, 절차, 회원규칙, 기타 필요한 사항을 규정함을 목적으로 합니다
 
@@ -196,8 +198,13 @@
   <div id="join-btn">
    <button  onclick="onNextClick()">다음</button>
   </div>
-  
-  <script>
+ 
+<c:if test="${not empty error }">
+  <div>
+     <h2 style="color: red">${error }</h2>
+  </div>
+</c:if>
+<script>
    const cb1 = document.getElementById("check_box_1");
    const cb2 = document.getElementById("check_box_2");
    let toggle = 0;
@@ -221,13 +228,8 @@
    
    
   </script>
-  
-  
-<c:if test="${not empty error }">
-  <div>
-     <h2 style="color: red">${error }</h2>
-  </div>
-</c:if>
+</div>
+<%@ include file="/footer.jsp" %>
 
 </body>
 </html>

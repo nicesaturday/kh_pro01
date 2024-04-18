@@ -9,8 +9,10 @@
 </head>
 <body>
 <%@ include file="/header.jsp" %>
-<div id="wrapper" class="container" style="width: 1200px; display: flex; justify-content: center" >
-    <textarea rows="30px" cols="120px" readonly="readonly" style="margin: 20px;">
+
+<div id="wrapper"  >
+<h2>회원 약관</h2>
+    <textarea rows="30px" cols="80px" readonly="readonly" style="margin: 20px;">
        제 1 장 총칙
    
   제 1 조 (목적) 이 이용약관은 “수유 사이트는 (이하 "수 사이트")”에서 제공하는 인터넷 서비스(이하 '서비스')의 가입조건, 수 사이트와 이용자의 권리, 의무, 책임사항과 기타 필요한 사항을 규정함을 목적으로 합니다.

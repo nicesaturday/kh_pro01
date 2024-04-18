@@ -6,43 +6,6 @@
 <meta charset="UTF-8">
 <title>회원 가입</title>
 <%@ include file="/head.jsp" %>
-</head>
-<body>
-<%@ include file="/header.jsp" %>
-  <form action="${hpath }/user_join" method="post" style="margin-top: 150px;" onsubmit="return onSubmit(this)">
-  <div class="form-group container">
-    <label for="email" style="text-align: center; width: 100%">이메일</label>
-    <input type="text" id="email" name="email" class="form-control"placeholder="이메일" max="100" required="required">
-    <button class="btn btn-primary form-control container" onclick="onEClick()" type="button" style="width: 60%"; id="e-btn" >이메일 중복 확인</button>
-  </div>
-  
-  <div class="form-group container">
-    <label for="name" style="text-align: center; width: 100%">이름</label>
-    <input class="form-control" id="name" name="name" placeholder="이름" max="100" required="required">
-  </div>
-  
- 
-  <div class="form-group container">
-    <label for="pw" style="text-align: center; width: 100%">비밀번호</label>
-    <input class="form-control" id="pw" name="pw" placeholder="비밀번호" max="100" r required="required">
-  </div>
- 
-  
-  
-  <div class="form-group container">
-    <label for="pw2" style="text-align: center; width: 100%">비밀번호 확인</label>
-    <input class="form-control" id="pw2" name="pw2" placeholder="비밀번호 확인" max="100" required="required">
-  </div>
- 
-  <div class="form-group container">
-   <button class="btn btn-primary form-control container" type="submit">가입</button>
-  </div>
-</form>
-<c:if test="${not empty error }">
-  <div>
-     <h2 style="color: red">${error }</h2>
-  </div>
-</c:if>
 <script>
   function onSubmit(f) {
 	  if(f.pw.value != pw2.value) {
@@ -87,6 +50,45 @@
 	  });
   }
 </script>
-
+</head>
+<body>
+<%@ include file="/header.jsp" %>
+<div id="wrapper">
+  <form action="${hpath }/user_join" method="post" style="margin-top: 150px;" onsubmit="return onSubmit(this)">
+  <div class="form-group container">
+    <label for="email" style="text-align: center; width: 100%">이메일</label>
+    <input type="text" id="email" name="email" class="form-control"placeholder="이메일" max="100" required="required">
+    <button class="btn btn-primary form-control container" onclick="onEClick()" type="button" style="width: 60%"; id="e-btn" >이메일 중복 확인</button>
+  </div>
+  
+  <div class="form-group container">
+    <label for="name" style="text-align: center; width: 100%">이름</label>
+    <input class="form-control" id="name" name="name" placeholder="이름" max="100" required="required">
+  </div>
+  
+ 
+  <div class="form-group container">
+    <label for="pw" style="text-align: center; width: 100%">비밀번호</label>
+    <input class="form-control" id="pw" name="pw" placeholder="비밀번호" max="100" r required="required">
+  </div>
+ 
+  
+  
+  <div class="form-group container">
+    <label for="pw2" style="text-align: center; width: 100%">비밀번호 확인</label>
+    <input class="form-control" id="pw2" name="pw2" placeholder="비밀번호 확인" max="100" required="required">
+  </div>
+ 
+  <div class="form-group container">
+   <button class="btn btn-primary form-control container" type="submit">가입</button>
+  </div>
+</form>
+<c:if test="${not empty error }">
+  <div>
+     <h2 style="color: red">${error }</h2>
+  </div>
+</c:if>
+</div>
+<%@ include file="/footer.jsp" %>
 </body>
 </html>

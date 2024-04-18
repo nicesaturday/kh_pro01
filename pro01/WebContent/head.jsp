@@ -19,6 +19,6 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="${ipath }/img/suyufavi.png">
 <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="${ipath }/css/base.css"/>
+<link rel="stylesheet" href="${ipath }/css/base.css?after"/>
 <link href="${ipath }/css/bootstrap.5.1.3.min.css" rel="stylesheet"  crossorigin="anonymous">
 <script src="${ipath }/js/bootstrap.bundle.5.1.3.min.js"  crossorigin="anonymous"></script>

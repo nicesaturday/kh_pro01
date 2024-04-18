@@ -20,7 +20,7 @@
 				<table class="table">
 					<tbody>
 						<tr>
-							<th style="background-color: #A4A4A4"><label for="no">글 번호</label></th>
+							<th style="background-color: #A4A4A4"><label for="id">글 번호</label></th>
 							<td>
 								<input type="text" name="id" id="no" class="form-control" maxlength="100" value="${data.id }" readonly>
 							</td>

@@ -39,9 +39,9 @@
           <tr class="table-light">
             <th></th>
             <th>Id</th>
-            <th>Email</th>
-            <th>Name</th>
-            <th>Resdate</th>
+            <th>이메일</th>
+            <th>이름</th>
+            <th>생성일</th>
           </tr>
     </thead>
     <tbody>

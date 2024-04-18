@@ -5,11 +5,10 @@
 <c:set var="fpath" value="<%=request.getContextPath() %>" />
 <hr>    
 <footer>
-	
 		<nav id="fnb" style="padding-top: 10px;">
 			<ul>
-				<li><a href="${fpath }/user/terms.jsp">회원약관</a></li>
-				<li><a href="${fpath }/user/policy.jsp">개인정보처리방침</a></li>
+				<li><a href="${fpath }/user_terms">회원약관</a></li>
+				<li><a href="${fpath }/user_policy">개인정보처리방침</a></li>
 			</ul>
 		</nav>
 		<div id="loc" style="margin-left: 20px; padding-top: 10px;">
@@ -33,5 +32,4 @@
 			<p class="addr">서울특별시 강북구 수유동 소개, 대표전화 : 02-2627-2114(120 다산콜센터로연결)</p>
 			<p class="copy">COPYRIGHT(C) SEOUL SUYU INTRO. ALL RIGHTS RESERVED.</p>
 		</div>
-
 </footer>

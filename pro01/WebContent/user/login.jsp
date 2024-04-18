@@ -9,6 +9,7 @@
 </head>
 <body>
 <%@ include file="/header.jsp" %>
+<div id="wrapper">
   <form action="${hpath }/user_login" method="post" style="margin-top: 150px;">
   <div class="form-group container">
     <label for="title" style="text-align: center; width: 100%">이메일</label>
@@ -38,6 +39,7 @@
      <h2 style="color: red">${error }</h2>
   </div>
 </c:if>
-
+</div>
+<%@ include file="/footer.jsp" %>
 </body>
 </html>

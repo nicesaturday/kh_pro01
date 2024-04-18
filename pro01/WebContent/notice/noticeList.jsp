@@ -24,7 +24,7 @@
             <th>제목</th>
             <th>내용</th>
             <th>작성 일</th>
-            <th>방문 날짜</th>
+            <th>조회수</th>
           </tr>
     </thead>
     <tbody>

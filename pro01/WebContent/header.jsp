@@ -6,7 +6,7 @@
 <script src="${hpath }/js/jquery-3.2.1.min.js"></script>
 <script src="${hpath }/js/popper.min.js"></script>
 <script src="https://kit.fontawesome.com/47a3dbe8b6.js" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="${hpath }/css/menu.css" />
+<link rel="stylesheet" href="${hpath }/css/menu.css?after" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <script>
@@ -37,9 +37,10 @@
     a {
 	color:#fff;
 	text-decoration: none;
-}
+     }
+     
    </style>
-<header style="margin-bottom: 20px;">
+<header>
   
  
    

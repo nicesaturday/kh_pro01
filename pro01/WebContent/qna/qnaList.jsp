@@ -24,6 +24,7 @@
 <body>
 <%@ include file="/header.jsp" %>
 <div id="wrapper">
+<h2> QnA</h2>
 <table class="table"  id="tb1">
 <thead>
   <tr>

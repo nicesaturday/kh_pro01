@@ -9,8 +9,9 @@
 </head>
 <body>
 <%@ include file="/header.jsp" %>
-<div id="wrapper" class="container" style="width: 1200px; display: flex; justify-content: center" >
-    <textarea rows="30px" cols="120px" readonly="readonly" style="margin: 20px;">
+<div id="wrapper">
+<h2>개인 정보 처리방침</h2>
+    <textarea rows="30px" cols="80px" readonly="readonly" style="margin: 20px;">
        수유 사이트
 이용조건, 절차, 회원규칙, 기타 필요한 사항을 규정함을 목적으로 합니다
 

@@ -10,6 +10,8 @@
 <body>
 <%@ include file="/header.jsp" %>
 <div id="wrapper">
+  	<section class="page" id="page1">
+		<div style="width:1400px; margin:0 auto;">
 	<table class="table">
 					<tbody>
 						<tr>
@@ -35,6 +37,8 @@
   	 <a href="${hpath }/user_edit" class="btn btn-warning">회원 정보 수정</a>
      <a href="${hpath }/user_out_self?id=${sid }" class="btn btn-danger">회원 탈퇴</a>
    </div>
+   </div>
+   </section>
    </div>
   <%@ include file="/footer.jsp" %>
 </body>
