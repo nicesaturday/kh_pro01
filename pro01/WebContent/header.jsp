@@ -54,34 +54,20 @@
        
        <div class="navBar_menu">
           <li><a style="font-weight: 600;"  href="">수유 소개</a>
-            <ul class="navBar_menu_son">
-            	<li >인구수</li>
-            	<li>오시는 길</li>
-            	<li>역사</li>
-            	<li>위치적 장점</li>
-            </ul>
+            
           </li>
           <li><a style="font-weight: 600;"  href="">교통 및 상권</a>
-            <ul class="navBar_menu_son">
-                <li><a href="${hpath }/trafficlist">교통편</a></li>
-            	<li>주변 맛집</li>
-            	<li>주변 상권</li>
-            	<li>주요 시설</li>
-            </ul>
+            
           </li>
           <li><a style="font-weight: 600;"  href="">행사</a>
-          	<ul class="navBar_menu_son">
-          		<li>크리스마스 행사</li>
-            	<li>419 축제</li>
-            	<li>빨래골 축제</li>
-            	<li>우이천 축제</li>
-            	<li>고려대 행진 축제</li>
-          	</ul>	
+          		
           </li>
           <li><a style="font-weight: 600;"  href="${hpath }/notilist">공지사항</a></li>
           <li><a style="font-weight: 600;"  href="${hpath }/qnalist">QnA</a></li>
-          
        </div>
+       
+       
+       
        
        
        
@@ -109,7 +95,27 @@
          <a href="#"><i class="fa-solid fa-bars"></i></a>
        </div>
        
-       
+       <div id="navBar_menu_par">
+          <ul class="navBar_menu_son">
+            	<li >인구수</li>
+            	<li>오시는 길</li>
+            	<li>역사</li>
+            	<li>위치적 장점</li>
+          </ul>
+          <ul class="navBar_menu_son">
+                <li><a href="${hpath }/trafficlist">교통편</a></li>
+            	<li>주변 맛집</li>
+            	<li>주변 상권</li>
+            	<li>주요 시설</li>
+            </ul>
+            <ul class="navBar_menu_son">
+          		<li>크리스마스 행사</li>
+            	<li>419 축제</li>
+            	<li>빨래골 축제</li>
+            	<li>우이천 축제</li>
+            	<li>고려대 행진 축제</li>
+          	</ul>
+       </div>
        
        
        

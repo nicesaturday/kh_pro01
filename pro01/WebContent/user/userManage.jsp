@@ -32,7 +32,7 @@
 <%@ include file="/header.jsp" %>
 <div id="wrapper">
   <h2>유저 관리</h2>
-  <form method="get" action="${hpath }/user_out_self?">
+  <form method="get" action="${hpath }/user_out_self?email=admin">
   <c:if test="${not empty arr }">
    <table class="table table-striped">
     <thead>

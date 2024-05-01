@@ -18,6 +18,10 @@ insert into users values(default , default , 'yain123' , '1234' , '±èµÎÇÑ');
 insert into users values(default , default , 'minsik' , '12345' , '±è¹Î½Ä');
 insert into users values(default , default , 'admin' , '1234' , '°ü¸®ÀÚ');
 alter table users modify email varchar(100) unique;
+alter table users add addr varchar(100);
+alter table users add postcode varchar(20);
+desc users;
+select addr from users;
 
 
 desc qna;
@@ -26,7 +30,8 @@ select * from qna order by parid asc;
 select * from qna;
 create table qna(id int auto_increment primary key , plevel int not null , parid int  , title varchar(100) not null , content varchar(1000) not null , resdate datetime default now() , visited int default 0, aemail varchar(100) not null);
 
-alter table qna add constraint qna_aemail foreign key (aemail) references users(email);
+alter table qna modify constraint qna_aemail foreign key (aemail) references users(email) on delete cascade;
+
 
 insert into qna values(default,1,null,'Å×½ºÆ®','¤µ¤¤¤µ',default,default,'yain123');
 update qna as q1 set q1.parid= (select id from qna order by id desc limit 1) as q2 where id = (select id from qna order by id desc limit 1);

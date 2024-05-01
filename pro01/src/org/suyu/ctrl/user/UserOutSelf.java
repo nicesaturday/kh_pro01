@@ -33,14 +33,20 @@ public class UserOutSelf extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 		
+
 		HttpSession session = request.getSession();
 		
+		String email = request.getParameter("email");
 		int id = Integer.parseInt(request.getParameter("id"));
 		int cnt = 0;
 		UserDao ud = new UserDao();
 		cnt = ud.deleteUser(id);
 		
 		if(cnt > 0) {
+			if(email == "admin") {
+				response.sendRedirect("/pro01");
+				return;
+			}
 			session.invalidate();
 			response.sendRedirect("/pro01");
 		}

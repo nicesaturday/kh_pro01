@@ -6,14 +6,18 @@ public class User {
 	private String email;
 	private String pw;
 	private String name;
+	private String addr;
+	private String postcode;
 	public User() {}
-	public User(int id, String resdate, String email, String pw, String name) {
+	public User(int id, String resdate, String email, String pw, String name, String addr, String postcode) {
 		super();
 		this.id = id;
 		this.resdate = resdate;
 		this.email = email;
 		this.pw = pw;
 		this.name = name;
+		this.addr = addr;
+		this.postcode = postcode;
 	}
 	public int getId() {
 		return id;
@@ -45,10 +49,24 @@ public class User {
 	public void setName(String name) {
 		this.name = name;
 	}
+	public String getAddr() {
+		return addr;
+	}
+	public void setAddr(String addr) {
+		this.addr = addr;
+	}
+	public String getPostcode() {
+		return postcode;
+	}
+	public void setPostcode(String postcode) {
+		this.postcode = postcode;
+	}
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", resdate=" + resdate + ", email=" + email + ", pw=" + pw + ", name=" + name + "]";
+		return "User [id=" + id + ", resdate=" + resdate + ", email=" + email + ", pw=" + pw + ", name=" + name
+				+ ", addr=" + addr + ", postcode=" + postcode + "]";
 	}
+	
 	
 	
 	

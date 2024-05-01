@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import org.suyu.dao.UserDao;
 import org.suyu.person.User;
+import org.suyu.util.AES256;
 
 /**
  * Servlet implementation class UserEdit
@@ -53,10 +54,27 @@ public class UserEdit extends HttpServlet {
 		response.setContentType("text/html; charset=UTF-8");
 		String email = request.getParameter("email");
 		String pw = request.getParameter("pw");
+		
+		String key = "%02x";
+		
+		try {
+		    pw = AES256.encryptAES256(pw, key);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 		String name = request.getParameter("name");
+		String addr = request.getParameter("addr");
+		String addr2 = request.getParameter("addr2");
+		addr += "," + addr2;
+		
+		String postcode = request.getParameter("postcode");
+		
+		
+		
 		int cnt = 0;
 		UserDao ud = new UserDao();
-		cnt = ud.editUser(email, pw, name);
+		cnt = ud.editUser(email, pw, name , addr , postcode);
 		
 		User user = ud.getOneUser(email);
 		
@@ -64,7 +82,9 @@ public class UserEdit extends HttpServlet {
 		session.setAttribute("semail", user.getEmail());
 		session.setAttribute("sname", user.getName());
 		session.setAttribute("sid", user.getId());
-		session.setAttribute("spw", user.getPw());
+		session.setAttribute("spw", user.getPw());	
+		session.setAttribute("saddr", user.getAddr());
+		session.setAttribute("spostcode", user.getPostcode());
 		
 		if(cnt > 0) {
 			RequestDispatcher view = request.getRequestDispatcher("/user/userInfo.jsp");

@@ -5,13 +5,13 @@
 <c:set var="fpath" value="<%=request.getContextPath() %>" />
 <hr>    
 <footer>
-		<nav id="fnb" style="padding-top: 10px;">
+		<nav id="fnb" style="margin-top: 5px">
 			<ul>
 				<li><a href="${fpath }/user_terms">회원약관</a></li>
 				<li><a href="${fpath }/user_policy">개인정보처리방침</a></li>
 			</ul>
 		</nav>
-		<div id="loc" style="margin-left: 20px; padding-top: 10px;">
+		<div id="loc" style="margin-left: 20px; ">
 			<select name="sel" id="sel" onchange="locate()">
 				<option value="">해당 관광서</option>
 				<option value="https://www.gangbuk.go.kr/www/index.do">강북구청</option>

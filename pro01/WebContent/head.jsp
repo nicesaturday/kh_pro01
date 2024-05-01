@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <c:set var="ipath" value="<%=request.getContextPath() %>"/> <!-- 최상위 패스(고정패스) -->
 <script src="${ipath }/js/bootstrap.min.js"></script>
 <script src="${ipath }/js/jquery-3.2.1.min.js"></script>

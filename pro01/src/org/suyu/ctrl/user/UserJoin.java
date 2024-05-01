@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.suyu.dao.UserDao;
 
+import org.suyu.util.AES256;
+
 /**
  * Servlet implementation class UserJoin
  */
@@ -40,8 +42,22 @@ public class UserJoin extends HttpServlet {
 		UserDao ud = new UserDao();
 		String email = request.getParameter("email");
 		String pw = request.getParameter("pw");
+		
+		String key = "%02x";
+		
+		try {
+			pw = AES256.encryptAES256(pw, key);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 		String name = request.getParameter("name");
-		cnt = ud.joinUser(email, pw, name);
+		String addr = request.getParameter("addr");
+		String addr2 = request.getParameter("addr2");
+		addr += "," + addr2;
+		
+		String postcode = request.getParameter("postcode");
+		cnt = ud.joinUser(email, pw, name , addr , postcode);
 		
 		if(cnt > 0) {
 			response.sendRedirect("/pro01/user_login");

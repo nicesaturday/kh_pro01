@@ -27,9 +27,10 @@ public class UserDao {
 	    			                   rs.getString("resdate"),
 	    			                   rs.getString("email"),
 	    			                   rs.getString("pw"),
-	    			                   rs.getString("name"));
+	    			                   rs.getString("name"),
+	    			                   rs.getString("addr"),
+	    			                   rs.getString("postcode"));
 	    	userList.add(user);
-	    	
 	    }
 	    } catch (SQLException e) {
 			e.printStackTrace();
@@ -39,7 +40,7 @@ public class UserDao {
 	    return userList;
 	}
 	
-	public int joinUser(String email, String pw , String name) {
+	public int joinUser(String email, String pw , String name , String addr , String postcode) {
 		int cnt = 0;
 		try {
 			con = db.connect();
@@ -48,6 +49,8 @@ public class UserDao {
 				pstmt.setString(1, email);
 				pstmt.setString(2, pw);
 				pstmt.setString(3, name);
+				pstmt.setString(4, addr);
+				pstmt.setString(5, postcode);
 				cnt = pstmt.executeUpdate();
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -75,7 +78,9 @@ public class UserDao {
 							                   rs.getString("resdate"),
 							                   rs.getString("email"),
 							                   rs.getString("pw"),
-							                   rs.getString("name"));
+							                   rs.getString("name"),
+			    			                   rs.getString("addr"),
+			    			                   rs.getString("postcode"));
 					result = user;
 				}
 			} catch (SQLException e) {
@@ -114,7 +119,7 @@ public class UserDao {
 		return cnt;
 	}
 	
-	public int editUser(String email,String pw,String name) {
+	public int editUser(String email,String pw,String name, String addr, String postcode) {
 		int cnt = 0;
 		try {
 			con = db.connect();
@@ -123,6 +128,8 @@ public class UserDao {
 				pstmt.setString(1, pw);
 				pstmt.setString(2, name);
 				pstmt.setString(3, email);
+				pstmt.setString(4, addr);
+				pstmt.setString(5, postcode);
 				cnt = pstmt.executeUpdate();
 			} catch (SQLException e) {
 				e.printStackTrace();

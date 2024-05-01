@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import org.suyu.dao.UserDao;
 import org.suyu.person.User;
+import org.suyu.util.AES256;
 
 /**
  * Servlet implementation class UserLogin
@@ -39,17 +40,28 @@ public class UserLogin extends HttpServlet {
 		
 		String email = request.getParameter("email");
 		String pw = request.getParameter("pw");
+		String key = "%02x";
 		
 		UserDao ud = new UserDao();
 		User user = ud.getOneUser(email);
+		String decrptpw = user.getPw();
+		try {
+			decrptpw = AES256.decryptAES256(user.getPw(), key);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
 		
-		  if(email.equals(user.getEmail()) && pw.equals(user.getPw())) {
+		
+		
+		  if(email.equals(user.getEmail()) && pw.equals(decrptpw)) {
 			HttpSession session = request.getSession();
 			session.setAttribute("semail", user.getEmail());
 			session.setAttribute("sname", user.getName());
 			session.setAttribute("sid", user.getId());
-			session.setAttribute("spw", user.getPw());
+			session.setAttribute("spw", decrptpw);
+			session.setAttribute("saddr", user.getAddr());
+			session.setAttribute("spostcode", user.getPostcode());
 			response.sendRedirect("/pro01");
 		} else if(email.equals(user.getEmail())) {
 			request.setAttribute("error", "비밀번호가 올바르지 않습니다.");
@@ -57,7 +69,7 @@ public class UserLogin extends HttpServlet {
 			RequestDispatcher view = request.getRequestDispatcher("/user/login.jsp");
 			view.forward(request, response);
 		} else {
-			request.setAttribute("error", "없는 사용자 입니다. 계정을 생성해 주세요.rr");
+			request.setAttribute("error", "없는 사용자 입니다. 계정을 생성해 주세요.");
 			RequestDispatcher view = request.getRequestDispatcher("/user/login.jsp");
 			view.forward(request, response);
 		}

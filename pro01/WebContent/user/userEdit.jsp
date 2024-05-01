@@ -55,6 +55,30 @@
       								<input type="name" class="form-control" id="name" value="${sname }" name="name" >
 							</td>
 						</tr>
+						
+						<c:set var="addr" value="${fn:split(saddr , ',')}" />
+						
+							<tr>
+								<th style="background-color: #848484"><label for="addr">주소</label></th>
+								<td>
+      								<input type="text" class="form-control" id="addr" value="${addr[0] }" name="addr" >
+								</td>
+							</tr>
+							<tr>
+								<th style="background-color: #848484"><label for="addr2">상세주소</label></th>
+								<td>
+      								<input type="text" class="form-control" id="addr2" value="${addr[1] }" name="addr2" >
+								</td>
+							</tr>
+						
+						
+								
+						<tr>
+							<th style="background-color: #848484"><label for="postcode">우편번호</label></th>
+							<td>
+      								<input type="text" class="form-control" id="postcode" value="${spostcode }" name="postcode" >
+							</td>
+						</tr>
 					</tbody>
 				</table>
 				<hr>
